@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
       include: [{ model: Product }, { model: ProductTag }],
     });
 
-    if (tag === null) {
+    if (tag !== null) {
       res.status(200).json(tag);
     } else {
       res.status(404).json({ message: "category not found" });
